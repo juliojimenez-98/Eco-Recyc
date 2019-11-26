@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% load staticfiles%}
+{ % load static % }
+
+{% block contenido %}
+<br>
+
+<div class="row container">
+    <div class="col s12 m12">
+      <div class="card white">
+        <div class="card-content">
+            <div class="row">
+                <form method="POST" class="col s12">
+                  <div class="container">
+                    <h4 class="black-text">Iniciar Sesión</h4>
+                    <hr>
+                    <br>
+                    <div class="container">
+                        {{ form.as_p }}
+                        {% csrf_token %}
+                    </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="container center">
+                    <button class="btn waves-effect bgverde" type="submit">Entrar
+                      <i class="material-icons right">send</i>
+                    </button>
+                    <br>
+                  </div>
+                  <br>
+                </form>      
+               
+                
+                <H6 class="center black-text">No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a> </H6>
+              </div>
+              
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock contenido %}

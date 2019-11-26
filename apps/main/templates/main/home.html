@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/materialize.min.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <title>EcoRecyc</title>
+</head>
+<body>
+  
+
+<ul id="slide-out" class="sidenav white">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="{% static 'main/img/LOGO_GRANDE.jpg' %}" class="img-fluid">
+      </div>
+      <br>
+      <br>
+      <hr>
+      <a href="#"><span class="black-text flow-text">Perfil</span></a>
+      <br>
+      <a href="#user"><img class="circle" src="{% static 'main/img/user_13230.png' %}" class="img-fluid"></a>
+      {% for x in obUsuario %} 
+      {%    if x.nusuario == user.username %}
+              <span class="black-text">Nombre de usuario : {{x.nusuario}}</span>
+              <hr>
+              <span class="black-text">Nombre : {{x.nombre_usuario}} {{x.apellido_usuario}}</span>
+              <hr>
+      {%    endif %}
+      {% endfor %}
+      
+     
+    </div></li>
+    <div class="white">
+      <li><a href="/" class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'">Editar Perfil</a></li>
+      <li><a href="/" class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'">Ir al inicio</a></li>
+      <li><div class="divider bgverde"></div></li>
+      <li><a class="waves-effect black-text" href="logout">Cerrar Sesión</a></li>
+
+    </div>
+    
+</ul>
+<div class="row borde">
+    <a href="#" data-target="slide-out" class="btn-floating btn-large green pulse sidenav-trigger"><i class="material-icons">menu</i></a>
+</div>
+   
+    
+<div class="row">
+      <h2 class="container">Misiones</h2>
+      <br>
+      <hr class="container">
+
+
+  <div class="container">
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content black-text bgverde">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header">
+                <i class="material-icons">today</i>
+                <p class="flow-text">Misiones pendientes</p>                
+                <span class="new badge red" data-badge-caption="Nueva Mision">1</span></div>
+              <div class="collapsible-body white">
+                  <p>{{mision.descripcion_mision}}</p>
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %} 
+                      <div class="file-field input-field container">
+                        <div class="btn bgverde">
+                          <span>Archivo</span>
+                          <input type="file" name="txtImagen" id="txtImagen" multiple required="">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" name="subir" type="text" placeholder="Sube tu foto completando la misión">
+                        </div>
+                        <button class="btn waves-effect bgverde" type="submit" >Subir Archivo
+                            <i class="material-icons right">unarchive</i>
+                        </button>
+                      </div>
+                  <br>
+                </form>
+                      
+               </div>               
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">today</i>
+                   <p class="flow-text">Misiones Realizadas</p>     
+                   </div>              
+                  <div class="collapsible-body white"> 
+                      <p>{{misionRealizada.realizado_mision}}</p>
+                   </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">EcoRecyc</h5>
+          <p class="grey-text text-lighten-4"></p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Únete a nosotros</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="{% url 'register' %}">Regístrate</a></li>
+            <li><a class="grey-text text-lighten-3" href="{% url 'Login' %}">Inicia Sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2019 EcoRecyc
+      </div>
+    </div>
+  </footer>
+  
+
+    <script src="{% static 'main/js/materialize.js'%}"></script>
+    <script src="{% static 'main/js/app.js' %}"></script>
+</body>
+</html>

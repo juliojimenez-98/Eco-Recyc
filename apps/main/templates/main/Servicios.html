@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+{% load staticfiles%}
+{ % load static % }
+
+{% block contenido %}
+<br>
+  
+<div class="row">
+    <h2 class="container">Nuestros Servicios</h2>
+    <br>
+    <hr class="container">
+    <br>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card bgverde">
+            <div class="card-image">
+              <img src="{% static 'main/img/PuntoReciclaje.jpg' %}" class="img-fluid">
+            </div>
+            <div class="card-content">
+              <h5 class="white-text">PUNTOS DE RECICLAJES.</h6>
+              <p class="white-text"> Ordenamos y organizamos de mejor manera los residuos del área, con el fin de mejorar el fijo de retiro de residuos reciclables.
+                    Reducción del volumen de residuos generados, aprovechando los recursos presentes en materiales reciclables. Evitando la sobreexplotación de los recursos naturales.                    
+                    Gracias a los puntos anteriores se logra una disminución de los costos de disposición final de los residuos generados.
+                    </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card bgverde">
+              <div class="card-image">
+                <img src="{% static 'main/img/Camiones.jpg' %}">
+              </div>
+              <div class="card-content">
+                <h5 class="white-text">VEHÍCULOS RECOLECTORES.</h6>
+                <p class="white-text">  El retiro del material dispuesto en el punto verde, tendrán una flexibilidad según la frecuencia de llenado que estos tengas, además de contar con un retiro fijo de 2 veces a la semana, 
+                    con el fin de no generar sobrepoblación del lugar.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+</div>
+
+{% endblock contenido %}

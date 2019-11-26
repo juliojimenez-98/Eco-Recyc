@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load staticfiles%}
+{ % load static % }
+
+{% block contenido %}
+<div class="row">
+    <h2 class="container">Nosotros</h2>
+    <br>
+    <hr class="container">
+    <br>
+    <p class="container">Somos una empresa creada por un grupo de estudiantes de la Universidad de Santiago que cree en el compromiso de la sociedad actual con los residuos no peligrosos como domiciliarios e industriales.</p>
+    <br>
+    <p class="container">Somos una empresa creada por un grupo de estudiantes de la Universidad de Santiago que cree en el compromiso de la sociedad actual con los residuos no peligrosos tanto como domiciliarios e industriales.</p>
+    <br>
+    <p class="container">En ECORECYC trabajamos para servir, gestionar y educar sobre los residuos antes mencionados garantizando a sus clientes una adecuada disposición final de sus desechos. Es esta responsabilidad la que nos lleva ha estar estrechamente comprometido con nuestro medioambiente y su desarrollo ecológico.</p> 
+
+</div>
+<div class="container bgverde">
+    <div class="row borde">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-image">
+              <img src="{% static 'main/img/LOGO_GRANDE.jpg' %}">
+              <span class="card-title black-text">ECORECYC</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock contenido %}

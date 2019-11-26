@@ -1,0 +1,86 @@
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/materialize.min.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="icon" href="{% static 'main/img/reciclar.ico' %}">
+    <title>EcoRecyc</title>
+</head>
+<body>
+    <div class="navbar-fixed">
+            
+        <nav class="white">
+            <a href="#Inicio" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons verde">menu</i></a>
+            <a href="#" data-target="menu-responsive" class="sidenav-trigger">
+            
+            </a>
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><img src="{% static 'main/img/Sin título-1.jpg' %}" width="100%" height="auto" alt=""></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'" href="/">Inicio</a></li>
+              <li><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'" href="{% url 'QuienesSomos' %}">Quienes Somos</a></li>
+              <li><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'" href="{% url 'Servicios' %}">Servicios</a></li>
+              <li><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'" href="{% url 'Contactanos' %}">Contáctanos</a></li>
+              <li><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'" href="{% url 'Login' %}">Inicia Sesion</a></li>
+              <li><a class="black-text" onMouseover="this.style.background='#757575'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#757575'" href="{% url 'home' %}"><i class="material-icons verde">home</i></a></li>
+            </ul>
+          </div>
+        </nav>
+     </div>
+
+<ul class="sidenav verde" id="mobile-demo">
+    <li class="verde"><a class="black-text bgverde" >MENÚ</a></li>
+
+  <li class="verde"><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'"  href="/">Inicio</a></li>
+  <li class="verde"><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'"  href="{% url 'QuienesSomos' %}">Quienes Somos</a></li>
+  <li class="verde"><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'"  href="{% url 'Servicios' %}">Servicios</a></li>
+  <li class="verde"><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'"  href="{% url 'Contactanos' %}">Contáctanos</a></li>
+  <li class="verde"><a class="black-text" onMouseover="this.style.background='#00A651'" onMouseout="this.style.background='white'"onMouseout="this.style.color='#00A651'"  href="{% url 'Login' %}">Inicia Sesion</a></li>
+
+
+</ul>
+{% block contenido %}
+
+<p>
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, nostrum!
+</p>
+    
+
+{% endblock contenido %}
+
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">EcoRecyc</h5>
+          <p class="grey-text text-lighten-4"></p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Únete a nosotros</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="{% url 'register' %}">Regístrate</a></li>
+            <li><a class="grey-text text-lighten-3" href="{% url 'Login' %}">Inicia Sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2019 EcoRecyc
+      </div>
+    </div>
+  </footer>
+  
+
+    <script src="{% static 'main/js/materialize.js' %}"></script>
+    <script src="{% static 'main/js/app.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% extends 'main/base.html' %}
+{% load staticfiles%}
+{ % load static % }
+
+{% block contenido %}
+<br>
+<br>
+
+<div class="row container">
+  <div class="col s12 m12">
+    <div class="card white">
+      <div class="card-content white-text">
+        <div class="row">
+            <div class="container">
+                <h4 class="black-text">Registrate</h4>
+                <hr>
+                <br>
+          <form action="register" method="POST" class="col s12">
+            {% csrf_token %}          
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="Ingresa Nombre" name="nombre" type="text" autofocus="" required="" class="validate">
+                      <label class="black-text">Nombre</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input placeholder="Ingresa Apellido" id="apellido" name="apellido" type="text" autofocus="" required="" class="validate">
+                      <label class="black-text" for="apellido">Apellido</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input type="text" class="datepicker" name="fnacimiento" id="fnacimiento" autofocus="" required="">
+                      <label class="black-text" for="fnacimeinto">Fecha de nacimiento</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input placeholder="Con que nombre quieres registrate?" id="nusuario" type="text" name="nusuario" autofocus="" required="" class="validate">
+                      <label class="black-text" for="nusuario">Nombre usuario</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="Ingresa tu correo" id="email" type="email" name="correo" autofocus="" required="" class="validate" >
+                      <label class="black-text" for="email">Correo</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input placeholder="Tu nueva contraseña" id="password" type="password" name="contraseña" autofocus="" required="" class="validate">
+                      <label class="black-text" for="password">Contraseña</label>
+                    </div>
+                    
+                  </div>
+
+                  <div class="container center">
+                    <button class="btn waves-effect bgverde" type="submit">Registrar
+                      <i class="material-icons right">send</i>
+                    </button>
+                  </div>
+
+          </form>
+        </div>
+        </div>
+        </div>
+        
+            
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock contenido %}
